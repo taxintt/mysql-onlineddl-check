@@ -1,25 +1,25 @@
-# ddl-check
+# onlineddl-check
 ## up container
 ```bash
 docker compose up -d
 ```
 
-## exec shell (bash)
+## 1: connect to MySQL
 ```bash
 docker exec -it mysql-container bash
 ```
 
-## connect to MySQL
 ```bash
 mysql -u root -proot
 ```
 
-## confirm MySQL version
+## 2: confirm MySQL version and settings
 ```bash
 select version();
 ```
 
-## confirm variables
 ```bash
 SHOW VARIABLES LIKE "secure_file_priv";
 ```
+
+# 3: Add index and execute dml
