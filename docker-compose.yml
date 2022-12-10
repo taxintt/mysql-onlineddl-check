@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    platform: linux/x86_64
+    image: mysql/mysql-server:5.7
+    container_name: mysql-container 
+    ports: 
+      - "3306:3306"
+    environment:
+      - MYSQL_USER
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+      - MYSQL_PASSWORD
+      - TIMEZONE
+    volumes:
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+      # https://github.com/docker-library/mysql/issues/792
+      - ./db/conf.d/my.cnf:/etc/my.cnf
+
+volumes:
+  mydata:
+    driver: local
