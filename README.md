@@ -19,7 +19,11 @@ select version();
 ```
 
 ```bash
-SHOW VARIABLES LIKE "secure_file_priv";
+show variables like "secure_file_priv";
 ```
 
 # 3: Add index and execute dml
+
+```bash
+show full processlist;
+```
